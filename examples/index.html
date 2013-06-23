@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>loda</title>
+
+	<link rel="stylesheet" href="icomon/style.css" />
+	<link rel="stylesheet" href="../loda.css" />
+
+	<style type="text/css">
+		body {
+			/*background: #333;*/
+			font-size: 100%;
+			margin: 5em;
+		}
+
+		.btn-box, .btn-box:visited {
+			background: #E5E6E6;
+			border-radius: .3em;
+			display: inline-block;
+			padding: 1em;
+			font-family: 'Lucida Grande', sans-serif;
+			text-decoration: none;
+			color: #FF7676;
+			height: 1em;
+			margin: 0 1em 1em 0;
+		}
+
+		.btn-box.active {
+			color: #bbb;
+			cursor: default;
+		}
+
+		
+	</style>
+</head>
+<body>
+
+	<a href="#" class="btn-box">
+		<span aria-hidden="true" class="icon icon-lock"></span>
+		Lock
+	</a>
+
+	<!-- <a href = "#" class="btn-box">
+		<span aria-hidden="true" class="icon icon-drawer"></span> Archive
+	</a>
+
+	<a href="#" class="btn-box">
+		<span aria-hidden="true" class="icon icon-upload"></span> Upload
+	</a>
+
+	<a href="#" class="btn-box">
+		<span aria-hidden="true" class="icon icon-connection"></span> Connect
+	</a> -->
+
+
+	<script type="text/javascript" src="../vendor/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="../loda.js"></script>
+
+	<script type="text/javascript">
+		var opts = {
+		  lines: 15, // The number of lines to draw
+		  length: 3, // The length of each line
+		  width: 2, // The line thickness
+		  radius: 10, // The radius of the inner circle
+		  corners: 0.1, // Corner roundness (0..1)
+		  rotate: 1, // The rotation offset
+		  direction: 1, // 1: clockwise, -1: counterclockwise
+		  color: '#bbb', // #rgb or #rrggbb
+		  speed: 1.1, // Rounds per second
+		  trail: 62, // Afterglow percentage
+		  shadow: false, // Whether to render a shadow
+		  hwaccel: false, // Whether to use hardware acceleration
+		  className: 'spinner', // The CSS class to assign to the spinner
+		  zIndex: 2e9, // The z-index (defaults to 2000000000)
+		  top: 'auto', // Top position relative to parent in px
+		  left: -7 // Left position relative to parent in px
+		};
+		var target = document.getElementById('spinner');
+		// var spinner = new Spinner(opts);
+		// var btn;
+
+		$('.icon').loda();
+		
+		$('.btn-box').click(function(e) {
+			var _self = $(this).addClass('active');
+			// spinner.spin(this);
+			// stop();
+			setTimeout(function() {
+				_self.removeClass('active');
+				// spinner.stop();
+			}, 1800);
+		});
+
+		var stop = function() {
+			setTimeout(function() {
+				$(this).removeClass('active');
+				// spinner.stop();
+			}, 2000);
+		};
+
+	</script>
+
+</body>
+</html>
